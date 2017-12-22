@@ -1,0 +1,26 @@
+body, #main-container, #main-container > div {
+    height: 100vh;
+}
+
+
+#note-top-menu {
+    height: 5vh;
+}
+
+#note {
+    height: 95vh;
+}
+
+#menu-side {
+    background-color: #303C50;
+}
+
+#item-side {
+    background-color: #2E3848;
+    color: #FDFDFD;
+}
+
+#main {
+    background-color: #1D2A37;
+    color: #F0F0F0;
+}
