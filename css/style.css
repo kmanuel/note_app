@@ -26,7 +26,15 @@ body, #main-container, #main-container > div {
 #menu-side span:hover {
     background-color: #D65C66;
     color: #303C50;
+}
 
+#new_button {
+    border: 3px solid #FDFDFD;
+}
+
+#new_button:hover {
+    border: 3px solid #D65C66;
+    color: #D65C66;
 }
 
 #item-side {
@@ -37,4 +45,31 @@ body, #main-container, #main-container > div {
 #main {
     background-color: #1D2A37;
     color: #F0F0F0;
+}
+
+#item-side #item-side-head {
+    padding-bottom: 1em;
+}
+
+#item-side .item:hover {
+    background-color: #1D2430;
+}
+
+#item-side .item {
+    padding-top: 1.3em;
+    padding-bottom: 1.5em;
+    border-top: 1px solid #FDFDFD;
+}
+
+#item-side .item.active {
+    border: 1px solid #FDFDFD;
+}
+
+#item-side .item-title {
+    font-weight: bold;
+}
+
+#item-side .item-date {
+    margin-top: 0.5em;
+    font-size: 0.9em;
 }
