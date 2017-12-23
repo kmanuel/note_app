@@ -59,10 +59,12 @@ body, #main-container, #main-container > div {
     padding-top: 1.3em;
     padding-bottom: 1.5em;
     border-top: 1px solid #FDFDFD;
+    color: #FDFDFD;
 }
 
 #item-side .item.active {
     border: 1px solid #FDFDFD;
+    background-color: red;
 }
 
 #item-side .item-title {

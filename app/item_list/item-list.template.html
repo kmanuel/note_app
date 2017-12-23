@@ -3,7 +3,11 @@
         <h2>Notebooks <span id="new_button" class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span></h2>
     </div>
 </div>
-<div class="row item" ng-repeat="note in $ctrl.notes">
-    <div class="col-xs-12 item-title">{{ note.title }}</div>
-    <div class="col-xs-12 item-date">12-22-2017</div>
+<div ng-repeat="note in $ctrl.notes">
+    <a href="#!/note/{{note.id}}">
+        <div class="row item">
+            <div class="col-xs-12 item-title">{{ note.title }}</div>
+            <div class="col-xs-12 item-date">{{ note.lastEdit }}</div>
+        </div>
+    </a>
 </div>
