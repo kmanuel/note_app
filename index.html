@@ -12,54 +12,29 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Note</title>
 </head>
-<body>
+<body ng-app="noteApp">
+
 <div id="main-container" class="container-fluid">
+
     <div id="menu-side" class="col-xs-1 text-center">
-        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        <side-menu></side-menu>
     </div>
+
     <div id="item-side" class="col-xs-2">
-        <div id="item-side-head" class="row">
-            <div class="col-xs-12">
-                <h2>Notebooks <span id="new_button" class="glyphicon glyphicon-plus pull-right"
-                                    aria-hidden="true"></span></h2>
-            </div>
-        </div>
-        <div class="row item">
-            <div class="col-xs-12 item-title">Programming Projects</div>
-            <div class="col-xs-12 item-date">12-22-2017</div>
-        </div>
-        <div class="row item active">
-            <div class="col-xs-12 item-title">Programming Projects</div>
-            <div class="col-xs-12 item-date">12-22-2017</div>
-        </div>
-        <div class="row item">
-            <div class="col-xs-12 item-title">Programming Projects</div>
-            <div class="col-xs-12 item-date">12-22-2017</div>
-        </div>
-        <div class="row item">
-            <div class="col-xs-12 item-title">Programming Projects</div>
-            <div class="col-xs-12 item-date">12-22-2017</div>
-        </div>
-        <div class="row item">
-            <div class="col-xs-12 item-title">Programming Projects</div>
-            <div class="col-xs-12 item-date">12-22-2017</div>
-        </div>
+        <note-list></note-list>
     </div>
+
     <div id="main" class="col-xs-9">
-        <div id="note-top-menu" class="row">
-            <div class="col-xs-12">
-                menu
-            </div>
-        </div>
-        <div id="note" class="row">
-            <div class="col-xs-12">
-                Note
-            </div>
-        </div>
+        <active-note></active-note>
     </div>
 </div>
+
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="app/app.js"></script>
+<script src="app/side_menu/side-menu.component.js"></script>
+<script src="app/item_list/item-list.component.js"></script>
+<script src="app/item/item.component.js"></script>
+
 </body>
 </html>
