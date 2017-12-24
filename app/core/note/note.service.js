@@ -16,6 +16,11 @@ angular
             },
             getNote: function (noteIdx) {
                 return self.notes[noteIdx];
+            },
+            addNote: function (newNote) {
+                newNote.id = self.notes.length;
+                self.notes.push(newNote);
+                return newNote.id;
             }
         }
     }]);
