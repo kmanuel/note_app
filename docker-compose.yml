@@ -14,3 +14,8 @@ services:
       - "8080:8080"
     volumes:
       - "./backend/noteservice/target:/app"
+  notedb:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

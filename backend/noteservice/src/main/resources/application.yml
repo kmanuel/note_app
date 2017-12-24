@@ -1,0 +1,9 @@
+spring.datasource:
+    url: jdbc:postgresql://notedb:5432/postgres
+    username: postgres
+    password: postgres
+
+spring.jpa:
+  database: POSTGRESQL
+  hibernate.ddl-auto: create-drop
+  show-sql: true
