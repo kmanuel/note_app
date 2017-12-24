@@ -9,7 +9,7 @@ angular
                     template: '<active-note></active-note>'
                 })
                 .when('/home', {
-                    template: '<div>View, edit & create Notes easily</div>'
+                    templateUrl: '/app/home/home.template.html'
                 })
                 .otherwise('/home');
         }
