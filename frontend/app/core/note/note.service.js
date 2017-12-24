@@ -23,6 +23,7 @@ angular
             },
             addNote: function (newNote) {
                 newNote.id = Object.keys(self.notes).length + 1;
+                newNote.title = "New";
                 self.notes[newNote.id] = newNote;
                 return newNote.id;
             }
