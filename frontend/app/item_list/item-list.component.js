@@ -14,7 +14,7 @@ angular
                         "lastEdit": "dummy-date",
                         "title": "",
                         "body": ""
-                    }
+                    };
                     var noteId = noteService.addNote(newNote);
                     $location.path('/note/' + noteId);
 

@@ -1,1 +1,2 @@
-angular.module('core.note',[]);
+angular
+    .module('core.note',[]);
