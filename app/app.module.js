@@ -3,5 +3,6 @@ angular
         [
             'ngRoute',
             'activeNote',
+            'itemList',
             'core'
         ]);

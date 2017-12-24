@@ -1,20 +1,21 @@
 angular
     .module('core.note')
-    .factory('noteService', ['$http', function($http) {
+    .factory('noteService', ['$http', function ($http) {
         var self = this;
-        self.notes = [];
+        this.notes = [];
+        $http.get('app/notes/notes.json').then(function(response) {
+            for (var index = 0; index < response.data.length; index++) {
+                var note = response.data[index];
+                self.notes.push(note);
+            }
+        });
+
         return {
-            getNotes: function() {
-                return $http.get('app/notes/notes.json');
+            getNotes: function () {
+                return self.notes;
             },
-            getNote: function(noteId) {
-                console.log('getnote');
-                return $http.get('app/notes/notes.json').then(function (response) {
-                    self.notes = response.data;
-                    console.log('returning: ');
-                    console.log(self.notes[noteId]);
-                    return self.notes[noteId];
-                });
+            getNote: function (noteIdx) {
+                return self.notes[noteIdx];
             }
         }
     }]);
