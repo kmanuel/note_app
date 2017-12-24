@@ -3,12 +3,18 @@ angular
     .factory('noteService', ['$http', function ($http) {
         var self = this;
         this.notes = [];
-        $http.get('app/notes/notes.json').then(function(response) {
-            for (var index = 0; index < response.data.length; index++) {
-                var note = response.data[index];
-                self.notes.push(note);
+        $http.get('http://localhost:8080/note').then(
+            function success(response) {
+                for (var index = 0; index < response.data.length; index++) {
+                    var note = response.data[index];
+                    self.notes.push(note);
+                }
+            }, function errorCallback(response) {
+                console.error(response);
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
             }
-        });
+        );
 
         return {
             getNotes: function () {
