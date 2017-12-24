@@ -2,5 +2,6 @@ angular
     .module('noteApp',
         [
             'ngRoute',
-            'activeNote'
+            'activeNote',
+            'core'
         ]);

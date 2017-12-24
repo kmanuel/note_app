@@ -2,15 +2,11 @@ angular
     .module('activeNote')
     .component('activeNote', {
         templateUrl: 'app/item/active-note.template.html',
-        controller: ['$routeParams', '$http',
-            function ActiveNoteController($routeParams, $http) {
+        controller: ['$routeParams', 'noteService',
+            function ActiveNoteController($routeParams, noteService) {
                 var self = this;
-                $http.get('app/notes/notes.json').then(function (response) {
-                    console.log(response);
-                    self.notes = response.data;
-                    self.activeNote = self.notes[$routeParams.noteId];
+                noteService.getNotes().then(function (response) {
+                    self.activeNote = response.data[$routeParams.noteId];
                 });
-
-
             }]
     });

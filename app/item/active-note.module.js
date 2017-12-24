@@ -1,1 +1,1 @@
-angular.module('activeNote', ['ngRoute']);
+angular.module('activeNote', ['ngRoute', 'core']);
