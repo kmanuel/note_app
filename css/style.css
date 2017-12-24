@@ -7,10 +7,6 @@ body, #main-container, #main-container > div {
     height: 5vh;
 }
 
-#note {
-    height: 95vh;
-}
-
 #menu-side {
     background-color: #303C50;
     color: #CCCCCC;
@@ -45,6 +41,28 @@ body, #main-container, #main-container > div {
 #main {
     background-color: #1D2A37;
     color: #F0F0F0;
+}
+
+#note , #note > div {
+    height: 95vh;
+}
+
+#note input {
+    height: 5vh;
+}
+
+#note textarea {
+    height: 85vh;
+}
+
+#note input, #note textarea {
+    width: 100%;
+    background-color: #1D2A37;
+    border: none;
+}
+
+#note input:focus, #note textarea:focus {
+    outline: none;
 }
 
 #item-side #item-side-head {

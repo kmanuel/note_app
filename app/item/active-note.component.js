@@ -2,36 +2,15 @@ angular
     .module('activeNote')
     .component('activeNote', {
         templateUrl: 'app/item/active-note.template.html',
-        controller: ['$routeParams',
-            function ActiveNoteController($routeParams) {
-                this.notes = [
-                    {
-                        "id": "0",
-                        "title": "Programming Projects",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }, {
-                        "id": "1",
-                        "title": "Title2",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }, {
-                        "id": "2",
-                        "title": "Title3",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }, {
-                        "id": "3",
-                        "title": "Title4",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }, {
-                        "id": "4",
-                        "title": "Title5",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }, {
-                        "id": "5",
-                        "title": "Title6",
-                        "body": "some body\nwith several lines\nand\nmarkdownstuff"
-                    }
-                ];
+        controller: ['$routeParams', '$http',
+            function ActiveNoteController($routeParams, $http) {
+                var self = this;
+                $http.get('app/notes/notes.json').then(function (response) {
+                    console.log(response);
+                    self.notes = response.data;
+                    self.activeNote = self.notes[$routeParams.noteId];
+                });
 
-                this.activeNote = this.notes[$routeParams.noteId];
+
             }]
     });

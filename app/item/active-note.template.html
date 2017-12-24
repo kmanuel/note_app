@@ -5,7 +5,7 @@
 </div>
 <div id="note" class="row">
     <div class="col-xs-12">
-        <h1>{{ $ctrl.activeNote.title }}</h1>
-        <p>{{ $ctrl.activeNote.body }}</p>
+        <h1><input type="text" ng-model="$ctrl.activeNote.title"></h1>
+        <textarea ng-model="$ctrl.activeNote.body"></textarea>
     </div>
 </div>
