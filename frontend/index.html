@@ -15,17 +15,21 @@
 <body ng-app="noteApp">
 
 <div id="main-container" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+            <div id="side" class="row">
+                <div id="menu-side" class="col-xs-3 text-center">
+                    <side-menu></side-menu>
+                </div>
+                <div id="item-side" class="col-xs-9">
+                    <note-list></note-list>
+                </div>
+            </div>
+        </div>
 
-    <div id="menu-side" class="col-xs-1 text-center">
-        <side-menu></side-menu>
-    </div>
-
-    <div id="item-side" class="col-xs-2">
-        <note-list></note-list>
-    </div>
-
-    <div id="main" class="col-xs-9">
-        <div ng-view></div>
+        <div id="main" class="col-xs-9">
+            <div ng-view></div>
+        </div>
     </div>
 </div>
 

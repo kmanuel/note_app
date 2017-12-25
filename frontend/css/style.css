@@ -92,3 +92,11 @@ body, #main-container, #main-container > div {
     margin-top: 0.5em;
     font-size: 0.9em;
 }
+
+#main-container > .row, #main-container > .row > div {
+    height: 100vh;
+}
+
+#side, #side > div {
+    height: 100vh;
+}
