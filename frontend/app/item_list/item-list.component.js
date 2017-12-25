@@ -2,13 +2,12 @@ angular
     .module('noteApp')
     .component('noteList', {
         templateUrl: 'app/item_list/item-list.template.html',
-        controller: ['$location', 'noteService',
-            function NoteListController($location, noteService) {
+        controller: ['$location', '$routeParams', 'noteService',
+            function NoteListController($location, $routeParams, noteService) {
                 var self = this;
                 self.notes = noteService.getNotes();
 
                 this.addNote = function () {
-                    console.log('addNote called');
                     var newNote = {
                         "id": "",
                         "lastEdit": "dummy-date",
@@ -18,6 +17,12 @@ angular
                     var noteId = noteService.addNote(newNote);
                     $location.path('/note/' + noteId);
 
+                };
+
+                this.classForNoteId = function (noteId) {
+                    return (noteId == $routeParams.noteId) ? 'active' : '';
                 }
+
+
             }]
     });

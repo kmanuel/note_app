@@ -5,7 +5,7 @@
 </div>
 <div ng-repeat="note in $ctrl.notes">
     <a href="#!/note/{{note.id}}">
-        <div class="row item">
+        <div class="row item" ng-class="$ctrl.classForNoteId(note.id)">
             <div class="col-xs-12 item-title">{{ note.title }}</div>
             <div class="col-xs-12 item-date">{{ note.lastEdit }}</div>
         </div>

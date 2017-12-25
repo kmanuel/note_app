@@ -81,8 +81,7 @@ body, #main-container, #main-container > div {
 }
 
 #item-side .item.active {
-    border: 1px solid #FDFDFD;
-    background-color: red;
+    border: 2px solid #FDFDFD;
 }
 
 #item-side .item-title {
