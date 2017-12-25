@@ -26,6 +26,9 @@ angular
                 newNote.title = "New";
                 self.notes[newNote.id] = newNote;
                 return newNote.id;
+            },
+            upload: function () {
+                return $http.post('http://localhost:8080/note/all', Object.values(self.notes));
             }
         }
     }]);

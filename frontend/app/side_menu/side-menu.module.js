@@ -1,0 +1,2 @@
+angular
+    .module('sideMenu', ['core'])

@@ -1,5 +1,19 @@
 angular
-    .module('noteApp')
+    .module('sideMenu')
     .component('sideMenu', {
-        templateUrl: 'app/side_menu/side-menu.template.html'
+        templateUrl: 'app/side_menu/side-menu.template.html',
+        controller: ['noteService',
+            function SideMenuController(noteService) {
+                this.upload = function() {
+                    console.log('upload called');
+                    noteService.upload().then(
+                        function success(response) {
+                            console.log('uploaded successfully');
+                        },
+                        function error(response) {
+                            console.error('upload failed');
+                        }
+                    )
+                }
+            }]
     });

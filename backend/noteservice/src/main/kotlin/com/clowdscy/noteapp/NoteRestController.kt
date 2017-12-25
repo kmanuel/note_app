@@ -12,8 +12,13 @@ class NoteRestController(val noteRepository: NoteRepository) {
     }
 
     @PostMapping
-    fun addNote(@RequestBody(required = true) newNote : Note) {
+    fun addNote(@RequestBody(required = true) newNote: Note) {
         this.noteRepository.save(newNote)
+    }
+
+    @PostMapping("all")
+    fun addAll(@RequestBody(required = true) notes: List<Note>) {
+        this.noteRepository.save(notes)
     }
 
 }

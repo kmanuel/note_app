@@ -4,5 +4,6 @@ angular
             'ngRoute',
             'activeNote',
             'itemList',
+            'sideMenu',
             'core'
         ]);
