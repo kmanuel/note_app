@@ -16,6 +16,11 @@ services:
       - "./backend/noteservice/target:/app"
   notedb:
     image: postgres
+    volumes:
+      - note_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+volumes:
+  note_db:
