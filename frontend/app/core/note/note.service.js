@@ -24,7 +24,18 @@ angular
                 return self.notes[noteId];
             },
             addNote: function (newNote) {
-                newNote.id = Object.keys(self.notes).length + 1;
+                function getNoteId() {
+                    var ids = Object.keys(self.notes);
+                    var max = 0;
+                    for (var i = 0; i < ids.length; i++) {
+                        var currId = parseInt(ids[i]);
+                        if (currId > max) {
+                            max = currId;
+                        }
+                    }
+                    return max + 1;
+                }
+                newNote.id = getNoteId();
                 newNote.title = "New";
                 self.notes[newNote.id] = newNote;
                 return newNote.id;
