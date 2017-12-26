@@ -7,9 +7,14 @@ body, #main-container, #main-container > div {
     height: 5vh;
 }
 
-#menu-side {
+#menu-side, #menu-side button {
     background-color: #303C50;
     color: #CCCCCC;
+}
+
+#menu-side button {
+    border-style: none;
+    outline: none;
 }
 
 #menu-side span {
@@ -19,13 +24,14 @@ body, #main-container, #main-container > div {
     padding: 0.25em;
 }
 
-#menu-side span:hover {
+#menu-side button:hover, #menu-side span:hover {
     background-color: #D65C66;
     color: #303C50;
 }
 
 #new_button {
     border: 3px solid #FDFDFD;
+    background-color: #2E3848;
 }
 
 #new_button:hover {

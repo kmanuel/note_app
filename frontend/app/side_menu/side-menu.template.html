@@ -1,5 +1,22 @@
-<span class="glyphicon glyphicon-file" aria-hidden="true" ng-class="{active : $ctrl.isActive('notes')}" ng-click="$ctrl.setActive('notes')"></span>
-<span class="glyphicon glyphicon-book" aria-hidden="true" ng-class="{active : $ctrl.isActive('notebooks')}" ng-click="$ctrl.setActive('notebooks')"></span>
-<span class="glyphicon glyphicon-star" aria-hidden="true" ng-class="{active : $ctrl.isActive('favorites')}" ng-click="$ctrl.setActive('favorites')"></span>
-<span class="glyphicon glyphicon-cog" aria-hidden="true" ng-class="{active : $ctrl.isActive('settings')}" ng-click="$ctrl.setActive('settings')"></span>
-<span class="glyphicon glyphicon-upload" aria-hidden="true" ng-click="$ctrl.upload()"></span>
+<button>
+    <span class="glyphicon glyphicon-file" aria-hidden="true" ng-class="{active : $ctrl.isActive('notes')}"
+          ng-click="$ctrl.setActive('notes')"></span>
+</button>
+
+<button>
+    <span class="glyphicon glyphicon-book" aria-hidden="true" ng-class="{active : $ctrl.isActive('notebooks')}"
+               ng-click="$ctrl.setActive('notebooks')"></span>
+</button>
+
+<button><span class="glyphicon glyphicon-star" aria-hidden="true" ng-class="{active : $ctrl.isActive('favorites')}"
+               ng-click="$ctrl.setActive('favorites')"></span>
+</button>
+
+<button>
+    <span class="glyphicon glyphicon-cog" aria-hidden="true" ng-class="{active : $ctrl.isActive('settings')}"
+               ng-click="$ctrl.setActive('settings')"></span>
+</button>
+
+<button ng-click="$ctrl.upload()">
+    <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+</button>
