@@ -20,7 +20,15 @@ angular
                 };
 
                 this.classForNoteId = function (noteId) {
-                    return (noteId == $routeParams.noteId) ? 'active' : '';
+                    return this.isActiveNote(noteId) ? 'active' : '';
+                };
+
+                this.isActiveNote = function (noteId) {
+                    return (noteId == $routeParams.noteId);
+                };
+
+                this.deleteNote = function (noteId) {
+                    noteService.delete($routeParams.noteId);
                 }
 
 
