@@ -12,12 +12,6 @@ import java.io.IOException;
 @Component
 public class SimpleCorsFilter implements Filter {
 
-    private final Logger log = LoggerFactory.getLogger(SimpleCorsFilter.class);
-
-    public SimpleCorsFilter() {
-        log.info("SimpleCORSFilter init");
-    }
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         // empty

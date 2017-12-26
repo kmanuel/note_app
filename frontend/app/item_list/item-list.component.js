@@ -10,7 +10,7 @@ angular
                 this.addNote = function () {
                     var newNote = {
                         "id": "",
-                        "lastEdit": "dummy-date",
+                        "created": new Date().getTime(),
                         "title": "",
                         "body": ""
                     };
