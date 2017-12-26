@@ -16,6 +16,11 @@ class NoteRestController(val noteRepository: NoteRepository) {
         this.noteRepository.save(newNote)
     }
 
+    @DeleteMapping("{noteId}")
+    fun deleteNote(@PathVariable noteId: Long) {
+        this.noteRepository.delete(noteId)
+    }
+
     @PostMapping("all")
     fun addAll(@RequestBody(required = true) notes: List<Note>) {
         this.noteRepository.save(notes)

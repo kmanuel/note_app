@@ -56,7 +56,6 @@ body, #main-container, #main-container > div {
 }
 
 #note input, #note textarea {
-    width: 100%;
     background-color: #1D2A37;
     border: none;
 }
