@@ -99,3 +99,7 @@ body, #main-container, #main-container > div {
 #side, #side > div {
     height: 100vh;
 }
+
+#menu-side .active {
+    color: #D65C66;
+}
