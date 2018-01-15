@@ -1,2 +1,2 @@
 angular
-    .module('itemList', ['core']);
+    .module('itemList', ['core', 'ngRoute']);

@@ -1,6 +1,6 @@
 angular
-    .module('noteApp')
-    .component('noteList', {
+    .module('itemList')
+    .component('itemList', {
         templateUrl: 'app/item_list/item-list.template.html',
         controller: ['$location', '$routeParams', 'noteService',
             function NoteListController($location, $routeParams, noteService) {
@@ -28,7 +28,7 @@ angular
                 };
 
                 this.deleteNote = function (noteId) {
-                    noteService.delete($routeParams.noteId);
+                    noteService.delete(noteId);
                 }
 
 

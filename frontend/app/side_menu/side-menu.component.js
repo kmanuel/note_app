@@ -7,7 +7,6 @@ angular
                 this.activeItem = 'notes';
 
                 this.upload = function() {
-                    console.log('upload called');
                     noteService.upload().then(
                         function success(response) {
                             console.log('uploaded successfully');
@@ -16,11 +15,11 @@ angular
                             console.error('upload failed');
                         }
                     )
-                }
+                };
 
                 this.setActive = function(item) {
                     this.activeItem = item;
-                }
+                };
 
                 this.isActive = function(item) {
                     return item === this.activeItem;
