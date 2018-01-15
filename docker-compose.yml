@@ -2,18 +2,14 @@ version: "2.0"
 services:
   frontend:
     build: ./frontend
-    image: frontend
     ports:
       - "80:8000"
     volumes:
       - "./frontend/:/app"
   notes:
     build: ./backend/noteservice
-    image: backend
     ports:
       - "8080:8080"
-    volumes:
-      - "./backend/noteservice/target:/app"
   notedb:
     image: postgres
     volumes:
