@@ -1,6 +1,6 @@
 describe('itemList', function () {
 
-    beforeEach(angular.mock.module('itemList'));
+    beforeEach(angular.mock.module('notes'));
 
     describe('ItemListController', function () {
         var ctrl, noteService;

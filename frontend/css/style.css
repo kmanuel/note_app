@@ -7,9 +7,10 @@ body, #main-container, #main-container > div {
     height: 5vh;
 }
 
-#menu-side, #menu-side button {
+#menu-side, #menu-side a {
     background-color: #303C50;
     color: #CCCCCC;
+    display: block;
 }
 
 #menu-side button {
@@ -42,6 +43,7 @@ body, #main-container, #main-container > div {
 #item-side {
     background-color: #2E3848;
     color: #FDFDFD;
+    height: 100vh;
 }
 
 #main {

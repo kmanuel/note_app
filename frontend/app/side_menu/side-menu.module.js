@@ -1,2 +1,2 @@
 angular
-    .module('sideMenu', ['core'])
+    .module('sideMenu', ['core', 'ngRoute'])

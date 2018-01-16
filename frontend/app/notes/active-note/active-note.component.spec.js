@@ -1,6 +1,6 @@
 describe('activeNote', function() {
 
-    beforeEach(angular.mock.module('activeNote'));
+    beforeEach(angular.mock.module('notes'));
 
     describe('activeNoteController', function() {
 

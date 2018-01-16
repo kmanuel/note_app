@@ -6,7 +6,13 @@ angular
 
             $routeProvider
                 .when('/note/:noteId', {
-                    template: '<active-note></active-note>'
+                    template: '<notes></notes>'
+                })
+                .when('/notebooks/', {
+                    template: '<notebooks></notebooks>'
+                })
+                .when('/favorites/', {
+                    template: '<favorites></favorites>'
                 })
                 .when('/home', {
                     templateUrl: '/app/home/home.template.html'

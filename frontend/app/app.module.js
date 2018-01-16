@@ -2,8 +2,9 @@ angular
     .module('noteApp',
         [
             'ngRoute',
-            'activeNote',
-            'itemList',
+            'notes',
+            'notebooks',
+            'favorites',
             'sideMenu',
             'core'
         ]);
