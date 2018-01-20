@@ -1,2 +1,2 @@
 angular
-    .module('notebookList', []);
+    .module('notebookList', ['core.notebook']);

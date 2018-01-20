@@ -36,7 +36,7 @@ angular
                     return max + 1;
                 }
                 newNote.id = getNoteId();
-                newNote.title = "New";
+                newNote.title = "";
                 self.notes[newNote.id] = newNote;
                 return newNote.id;
             },
