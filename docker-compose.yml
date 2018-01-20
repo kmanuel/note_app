@@ -10,6 +10,8 @@ services:
     build: ./notes_backend/
     ports:
       - "8080:8080"
+    volumes:
+      - "./notes_backend/:/app"
   notedb:
     image: postgres
     volumes:

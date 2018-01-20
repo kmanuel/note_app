@@ -1,5 +1,7 @@
-package com.clowdsky.notes;
+package com.clowdsky.notes.note;
 
+import com.clowdsky.notes.note.Note;
+import com.clowdsky.notes.note.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

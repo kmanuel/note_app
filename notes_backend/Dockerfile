@@ -1,11 +1,11 @@
 FROM maven:3.5-jdk-8
 
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY . .
+
 EXPOSE 8080
 
-RUN mkdir app
-
-WORKDIR app
-
-COPY ./target .
-
-ENTRYPOINT ["java", "-jar", "backend-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["./build_and_run.sh"]

@@ -1,4 +1,4 @@
-package com.clowdsky.notes;
+package com.clowdsky.notes.note;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +19,7 @@ public class Note {
     private Date lastEdited;
 
 
-    public Note() {
-
-    }
+    public Note() {}
 
     public Long getId() {
         return id;
