@@ -7,7 +7,7 @@ services:
     volumes:
       - "./frontend/:/app"
   notes:
-    build: ./backend/noteservice
+    build: ./notes_backend/
     ports:
       - "8080:8080"
   notedb:
