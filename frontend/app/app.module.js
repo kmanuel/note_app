@@ -4,6 +4,7 @@ angular
             'ngRoute',
             'notes',
             'notebooks',
+            'notebookNotes',
             'favorites',
             'sideMenu',
             'core'

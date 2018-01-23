@@ -1,7 +1,7 @@
 angular
     .module('itemList')
     .component('itemList', {
-        templateUrl: 'app/notes/note-list/item-list.template.html',
+        templateUrl: 'app/notes/note-list/notebook-item-list.template.html',
         controller: ['$location', '$routeParams', 'noteService',
             function NoteListController($location, $routeParams, noteService) {
                 var self = this;

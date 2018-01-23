@@ -3,40 +3,47 @@ angular
         .factory('notebookService', ['$http', function ($http) {
             var self = this;
             this.notebooks = {};
-            $http.get('http://localhost:8080/notebook').then(
-                function success(response) {
-                    for (var i = 0; i < response.data.length; i++) {
-                        var notebook = response.data[i];
-                        self.notebooks[i] = notebook;
+            fetchNotebooks();
+
+            function fetchNotebooks() {
+                $http.get('http://localhost:8080/notebook').then(
+                    function success(response) {
+                        console.log('received from http://localhost:8080/notebook');
+                        console.log(response.data);
+                        for (var i = 0; i < response.data.length; i++) {
+                            var notebook = response.data[i];
+                            self.notebooks[notebook.id] = notebook;
+                        }
+                        console.log('notebooks after processing are:');
+                        console.log(response.data);
+                    },
+                    function errorCallback(response) {
+                        console.error(response);
                     }
-                },
-                function errorCallback(response) {
-                    console.error(response);
-                }
-            );
+                );
+            }
 
             return {
+                getFetchNotebooks: function() {
+                    return $http.get('http://localhost:8080/notebook');
+                },
                 getNotebooks: function () {
                     return self.notebooks;
                 },
                 getNotebook: function (notebookId) {
-                    return self.notebooks[notebookId];
+                    return $http.get('http://localhost:8080/notebook/' + notebookId);
+                },
+                addNoteToNotebook: function (note, notebookId) {
+                    return $http.post('http://localhost:8080/notebook/' + notebookId + '/notes', note);
                 },
                 addNotebook: function (newNotebook) {
-                    function getNotebookId() {
-                        var ids = Object.keys(self.notebooks);
-                        var max = 0;
-                        for (var i = 0; i < ids.length; i++) {
-                            var currId = parseInt(ids[i]);
-                            if (currId > max) {
-                                max = currId;
-                            }
-                        }
-                        return max + 1;
-                    }
-                    newNotebook.id = getNotebookId();
-                    self.notebooks[newNotebook.id] = newNotebook;
-                    return newNotebook.id;
+                    return $http.post('http://localhost:8080/notebook', newNotebook);
+                },
+                saveNotebook: function (notebook) {
+                    return $http.post('http://localhost:8080/notebook/' + notebook.id, notebook);
+                },
+                getNotesForNotebook: function (notebookId) {
+                    return $http.get('http://localhost:8080/notebook/' + notebookId + '/notes');
                 }
             }
 

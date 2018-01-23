@@ -1,2 +1,2 @@
 angular
-    .module('notebooks', ['notebookItem', 'notebookList']);
+    .module('notebooks', []);

@@ -13,7 +13,8 @@ public class Notebook {
     private Long id;
 
     private String title;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Note> notes;
 
     public Long getId() {

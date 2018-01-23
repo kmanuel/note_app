@@ -8,8 +8,14 @@ angular
                 .when('/note/:noteId', {
                     template: '<notes></notes>'
                 })
-                .when('/notebooks/', {
+                .when('/notebook/', {
                     template: '<notebooks></notebooks>'
+                })
+                .when('/notebook/:notebookId/note/:noteId', {
+                    template: '<notebook-notes></notebook-notes>'
+                })
+                .when('/notebook/:notebookId', {
+                    template: '<notebook-notes></notebook-notes>'
                 })
                 .when('/favorites/', {
                     template: '<favorites></favorites>'

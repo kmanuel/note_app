@@ -4,7 +4,7 @@
                         ng-click="$ctrl.addNote()"></span></button></h2>
     </div>
 </div>
-<div ng-repeat="note in $ctrl.notes">
+<div ng-repeat="note in $ctrl.notebook.notes">
     <a href="#!/note/{{note.id}}">
         <div class="row item" ng-class="$ctrl.classForNoteId(note.id)">
             <div class="col-xs-9">
