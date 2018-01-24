@@ -2,8 +2,8 @@ angular
     .module('notebookNotes')
     .component('notebookNotes', {
         templateUrl: 'app/notebook-notes/notebook-notes.template.html',
-        controller: ['$scope', '$routeParams', 'notebookService',
-            function NoteNotesController($scope, $routeParams, notebookService) {
+        controller: ['$scope', '$location', '$routeParams', 'notebookService',
+            function NoteNotesController($scope, $location, $routeParams, notebookService) {
                 var self = this;
                 self.notebookId = $routeParams.notebookId;
                 self.notebook = {
@@ -62,7 +62,9 @@ angular
                     };
                     notebookService.addNoteToNotebook(newNote, self.notebookId).then(
                         function success(response) {
+                            var newNoteId = response.data.id;
                             fetchNotebook(self.notebookId);
+                            self.switchToNote(newNoteId);
                         },
                         function error(response) {
                             console.error('adding of note failed');
@@ -72,6 +74,7 @@ angular
                 };
 
                 this.switchToNote = function(noteId) {
+                    $location.path('/notebook/' + self.notebookId + '/note/' + noteId);
                     saveActiveNoteUpdates();
                     setActiveNote(parseInt(noteId));
                 }
