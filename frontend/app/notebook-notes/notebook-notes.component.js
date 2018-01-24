@@ -13,10 +13,6 @@ angular
                 self.activeNote = {};
                 fetchNotebook(self.notebookId);
 
-                $scope.$on("$destroy", function(){
-                    saveActiveNoteUpdates();
-                });
-
                 function saveActiveNoteUpdates() {
                     for (var i in self.notebook.notes) {
                         var note = self.notebook.notes[i];
@@ -24,7 +20,7 @@ angular
                             self.notebook.notes[i] = self.activeNote;
                         }
                     }
-                    notebookService.saveNotebook(self.notebook);
+                    return notebookService.saveNotebook(self.notebook);
                 }
 
                 function setActiveNote(activeNoteId) {
@@ -35,8 +31,6 @@ angular
                                 self.activeNote = note;
                             }
                         }
-                        console.log('activeNote=');
-                        console.log(self.activeNote);
                     }
                 }
 
@@ -54,6 +48,7 @@ angular
                 }
 
                 this.addNote = function () {
+                    saveActiveNoteUpdates();
                     var newNote = {
                         "id": "",
                         "created": new Date().getTime(),
@@ -64,7 +59,7 @@ angular
                         function success(response) {
                             var newNoteId = response.data.id;
                             fetchNotebook(self.notebookId);
-                            self.switchToNote(newNoteId);
+                            self.switchToNote(newNoteId, false);
                         },
                         function error(response) {
                             console.error('adding of note failed');
@@ -73,8 +68,7 @@ angular
 
                 };
 
-                this.switchToNote = function(noteId) {
-                    $location.path('/notebook/' + self.notebookId + '/note/' + noteId);
+                this.switchToNote = function(noteId, save) {
                     saveActiveNoteUpdates();
                     setActiveNote(parseInt(noteId));
                 }

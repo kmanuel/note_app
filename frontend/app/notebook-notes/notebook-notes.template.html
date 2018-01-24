@@ -34,7 +34,9 @@
         <div id="note" class="row">
             <div class="col-xs-12">
                 <div class="row">
-                    <h1 class="col-xs-12"><input type="text" ng-model="$ctrl.activeNote.title"></h1>
+                    <h1 class="col-xs-12">
+                        <input type="text" ng-model="$ctrl.activeNote.title" placeholder="New Note Title">
+                    </h1>
                 </div>
                 <div class="row">
                     <textarea class=col-xs-12 ng-model="$ctrl.activeNote.body"></textarea>
